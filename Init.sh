@@ -21,6 +21,6 @@ cd ..
 
 cd Plugin.Bla2 
 
-dotnet build
+dotnet build --force
 
 cp -R ./bin/Debug/netstandard2.0/* ../../DynamicAssemblyLoader/plugins/Plugin.Bla2/
