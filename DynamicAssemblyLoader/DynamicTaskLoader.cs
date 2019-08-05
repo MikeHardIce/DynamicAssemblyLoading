@@ -19,8 +19,8 @@ namespace DynamicAssemblyLoader
 
             var typeOfPluggedTaskInformation = plugin.DefinedTypes.FirstOrDefault(m => m.ImplementedInterfaces.Any( t => t.FullName == typeof(ITaskInformation).FullName));
 
-            var taskInfo = plugin.CreateInstance(typeOfPluggedTaskInformation.Name) as ITaskInformation;
-
+            ITaskInformation taskInfo = plugin.CreateInstance(typeOfPluggedTaskInformation.FullName) as ITaskInformation;
+            
             return taskInfo;
         }
     }

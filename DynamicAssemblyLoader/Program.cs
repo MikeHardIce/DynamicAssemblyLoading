@@ -16,11 +16,17 @@ namespace DynamicAssemblyLoader
 
             ITaskInformation bla1Info = taskLoader.LoadTaskInformation(Path.Combine(directory, "Plugin.Bla1", "Plugin.Bla1.dll"));
 
-            bla1Info.CreateTask().Execute();
+            ITask bla1 = bla1Info.CreateTask();
 
             ITaskInformation bla2Info = taskLoader.LoadTaskInformation(Path.Combine(directory, "Plugin.Bla2", "Plugin.Bla2.dll"));
 
-            bla2Info.CreateTask().Execute();
+            ITask bla2 = bla2Info.CreateTask();
+
+
+            bla2.Execute();
+            bla1.Execute();
+            bla2.Execute();
+            bla1.Execute();
         }
     }
 }

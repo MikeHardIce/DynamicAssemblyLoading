@@ -1,11 +1,26 @@
 ﻿using System;
 using SomeSharedLib;
+using Plugin.Bla2.Models;
+using Newtonsoft.Json;
 
 namespace Plugin.Bla2
 {
     public class Bla2Task : ITask
     {
         public void Execute()
-            => Console.WriteLine("Bla2 task is executing...");
+        {
+            var crazy = new Crazy 
+            {
+                What = " ba bu ba buhu"
+            };
+
+            string serialized = JsonConvert.SerializeObject(crazy);
+
+            Crazy meToo = JsonConvert.DeserializeObject(serialized) as Crazy;
+
+            meToo.Blub();
+
+            Console.WriteLine("Bla2 task is executing...");
+        } 
     }
 }
