@@ -16,7 +16,7 @@ namespace DynamicAssemblyLoader
         {
             string assemblyPath = this.resolver.ResolveAssemblyToPath(assemblyName);
 
-            if (string.IsNullOrEmpty(assemblyPath))
+            if (!string.IsNullOrEmpty(assemblyPath))
             {
                 return LoadFromAssemblyPath(assemblyPath);
             }
