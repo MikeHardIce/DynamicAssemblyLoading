@@ -16,7 +16,7 @@ namespace Plugin.Bla2
 
             string serialized = JsonConvert.SerializeObject(crazy);
 
-            Crazy meToo = JsonConvert.DeserializeObject(serialized) as Crazy;
+            Crazy meToo = JsonConvert.DeserializeObject<Crazy>(serialized);
 
             meToo.Blub();
 
